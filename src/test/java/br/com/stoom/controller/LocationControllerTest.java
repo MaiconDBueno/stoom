@@ -90,7 +90,7 @@ public class LocationControllerTest {
 
 	@Test
 	public void updateLocation() throws Exception {
-		String uri = "/api/v1/location/2";
+		String uri = "/api/v1/location/1";
 		Location location = new Location();
 		location.setNeighbourhood("Neighbourhood UPDATE");
 		location.setCity("Campinas");
@@ -114,7 +114,7 @@ public class LocationControllerTest {
 
 	@Test
 	public void deleteLocation() throws Exception {
-		String uri = "/api/v1/location/6";
+		String uri = "/api/v1/location/1";
 		MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.delete(uri)).andReturn();
 		int status = mvcResult.getResponse().getStatus();
 		assertEquals(200, status);

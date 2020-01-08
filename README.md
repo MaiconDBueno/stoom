@@ -1,23 +1,23 @@
 # Stoom
 Sprint Boot + Crud + Mysql + Geocoding + JUnit Tests using MockMvc and Mockito
 
-# Script mysql
-CREATE SCHEMA `stoom` ;
+# Run Script
+  
+  Location:
+  
+  /stoom/src/main/resources/script_v1.sql
+  
+# Run Api 
 
-CREATE TABLE `location` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `street_name` varchar(200) NOT NULL,
-  `number` int(11) NOT NULL,
-  `complement` varchar(100) DEFAULT NULL,
-  `neighbourhood` varchar(200) NOT NULL,
-  `city` varchar(100) NOT NULL,
-  `statel` varchar(100) NOT NULL,
-  `country` varchar(100) NOT NULL,
-  `zipcode` varchar(20) NOT NULL,
-  `latitude` decimal(10,8) DEFAULT NULL,
-  `longitude` decimal(11,8) DEFAULT NULL,
-  `creation_date` datetime DEFAULT NULL,
-  `update_date` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+  mvn clean ;
+  mvn install ;
+  mvn spring-boot:run;
+  
+# Api routes 
+  
+  localhost:888/api/v1/location/{id}  - (get)
+  //		   /api/v1/location       - (get)
+  //		   /api/v1/location       - (post)
+  //		   /api/v1/location/{id}  - (put)
+  //	       /api/v1/location/{id}  - (delete)
+  //           /api/v2/location       - (get)
